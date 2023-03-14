@@ -1,0 +1,21 @@
+apiVersion: skaffold/v4beta3
+kind: Config
+metadata:
+  name: bks-live-events
+build:
+  artifacts:
+    - image: cornbrandonk/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+
+manifests:
+  rawYaml:
+    - ./infra/k8s/*
+
+  
+  
