@@ -1,8 +1,20 @@
 import { Router } from 'express';
-const router = Router();
-import authRoutes from './auth';
+import { currentUserRouter } from './get-current-users'
+import { signInRouter } from './sign-in';
+import { signOutRouter } from './sign-out';
+import { signUpRouter } from './sign-up';
 
-router.use(authRoutes);
+const router = Router();
+
+
+router.use(currentUserRouter);
+
+router.use(signInRouter);
+
+router.use(signOutRouter);
+
+router.use(signUpRouter);
+
 
 export default router;
 
