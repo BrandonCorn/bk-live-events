@@ -42,7 +42,7 @@ router.post(
         jwt: sessionToken
     }
 
-    return res.status(200).send(user);
+    return res.status(201).send({ id: user.id, email: user.email });
 });
 
 export { router as signUpRouter }

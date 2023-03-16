@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-const JWT_SECRET = process.env.JWT_SECRET || 'lasjdflh)(*()**lsdj98237'
+const JWT_SECRET = process.env.JWT_SECRET!;
 
 export class Jwt {
     
