@@ -1,4 +1,6 @@
 import jwt from 'jsonwebtoken';
+import { User } from '../models/User';
+
 const JWT_SECRET = process.env.JWT_SECRET!;
 
 export class Jwt {
@@ -7,8 +9,10 @@ export class Jwt {
         const token = jwt.sign(payload, JWT_SECRET);
         return token;
     }
-    static verifyToken(token: string) {
+    
 
+    static verifyToken(token: string) {
+        return jwt.verify(token, JWT_SECRET)
     } 
 
 }

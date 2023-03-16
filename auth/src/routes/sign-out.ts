@@ -5,7 +5,8 @@ const router = Router();
 router.post(
     '/api/users/signout',
     (req: Request, res: Response) => {
-
+        req.session = null;
+        return res.status(201).send({});
     }
 )
 

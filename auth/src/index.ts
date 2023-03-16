@@ -15,7 +15,7 @@ app.use(cookieSession({
     signed: false,
     secure: true,
     secureProxy: true,
-}))
+}));
 
 //primary routes handler
 app.use(routes);
