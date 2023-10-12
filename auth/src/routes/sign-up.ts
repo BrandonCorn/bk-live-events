@@ -1,9 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { body } from 'express-validator';
-import { BadRequestError } from '../errors/bad-request-error';
+import { BadRequestError, Jwt, validateRequest } from '@ticketmister/lib';
 import { User } from '../models/User';
-import { Jwt } from '../utilities/jwt';
-import { validateRequest } from '../middlewares/validate-request';
 const router = Router();
 
 

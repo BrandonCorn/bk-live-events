@@ -1,10 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { body } from 'express-validator';
 import { User } from '../models/User';
-import { BadRequestError } from '../errors/bad-request-error';
-import { validateRequest } from '../middlewares/validate-request';
-import { PasswordManager } from '../utilities/password-manager';
-import { Jwt } from '../utilities/jwt';
+import { BadRequestError, validateRequest, PasswordManager, Jwt } from '@ticketmister/lib';
+
 const router = Router();
 
 router.post(

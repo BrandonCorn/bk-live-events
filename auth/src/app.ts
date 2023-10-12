@@ -2,9 +2,8 @@ import 'express-async-errors';
 import express from 'express';
 import routes from './routes';
 import cookieSession from 'cookie-session';
+import { errorHandler, NotFoundError } from '@ticketmister/lib';
 
-import { errorHandler } from './middlewares/error-handler';
-import { NotFoundError } from './errors/not-found-error';
  
 
 const app = express();

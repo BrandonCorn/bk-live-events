@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import { PasswordManager } from '../utilities/password-manager';
+import { PasswordManager } from '@ticketmister/lib';
 
 interface UserAttrs {
-    email: String;
-    password: String
+    email: string;
+    password: string
 }
 
 interface UserModel extends mongoose.Model<UserDoc> {

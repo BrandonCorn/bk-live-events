@@ -3,9 +3,29 @@ kind: Config
 metadata:
   name: bks-live-events
 build:
+  # local:
+  #   push: false
+  # googleCloudBuild:
+  #   projectId: bk-live-events
   artifacts:
-    - image: cornbrandonk/auth
+    - image: cornbrandon/auth
       context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: cornbrandon/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: cornbrandon/tickets
+      context: tickets
       docker:
         dockerfile: Dockerfile
       sync:
